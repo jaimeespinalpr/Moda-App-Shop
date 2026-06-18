@@ -302,6 +302,13 @@ a {
   font-size: 1rem;
 }
 
+.quote-success {
+  display: none;
+  margin-top: 16px;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
 /* Footer */
 .site-footer {
   background: var(--color-primary);
@@ -325,8 +332,14 @@ a {
 }
 
 @media (max-width: 760px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 24px;
+  }
   .main-nav {
-    display: none;
+    gap: 16px;
+    flex-wrap: wrap;
   }
   .hero-text h1 {
     font-size: 2rem;

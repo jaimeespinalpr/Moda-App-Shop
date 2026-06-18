@@ -1,5 +1,7 @@
 const translations = {
   es: {
+    "page.title": "WearQuote — Moda a tu medida",
+    "page.description": "WearQuote conecta clientes con diseñadores de moda profesionales: compra diseños listos o pide una cotización personalizada.",
     "nav.howItWorks": "Cómo funciona",
     "nav.designers": "Diseñadores",
     "nav.quote": "Pide tu cotización",
@@ -21,9 +23,12 @@ const translations = {
     "quote.subtitle": "Pronto podrás describir tu prenda ideal — tela, estilo, hilo y más — y enviarla a varios diseñadores para recibir su cotización.",
     "quote.emailPlaceholder": "tu@email.com",
     "quote.notifyMe": "Notifícame cuando esté lista",
+    "quote.successMessage": "¡Gracias! Te notificaremos tan pronto como la plataforma esté lista.",
     "footer.tagline": "Moda profesional, hecha a tu medida."
   },
   en: {
+    "page.title": "WearQuote — Custom Fashion",
+    "page.description": "WearQuote connects clients with professional fashion designers: buy ready-made designs or request a custom quote.",
     "nav.howItWorks": "How it works",
     "nav.designers": "Designers",
     "nav.quote": "Get a quote",
@@ -45,6 +50,7 @@ const translations = {
     "quote.subtitle": "Soon you'll be able to describe your ideal garment — fabric, style, thread and more — and send it to several designers to get their quote.",
     "quote.emailPlaceholder": "you@email.com",
     "quote.notifyMe": "Notify me when it's ready",
+    "quote.successMessage": "Thank you! We will notify you as soon as the platform is ready.",
     "footer.tagline": "Professional fashion, made to your measure."
   }
 };

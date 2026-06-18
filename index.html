@@ -99,10 +99,11 @@
       <div class="container quote-inner">
         <h2 data-i18n="quote.title">¿Tienes una idea en mente?</h2>
         <p data-i18n="quote.subtitle">Pronto podrás describir tu prenda ideal — tela, estilo, hilo y más — y enviarla a varios diseñadores para recibir su cotización.</p>
-        <form class="quote-form" onsubmit="event.preventDefault();">
+        <form class="quote-form" id="quote-form">
           <input type="email" placeholder="tu@email.com" data-i18n-placeholder="quote.emailPlaceholder" required />
           <button type="submit" class="btn btn-primary" data-i18n="quote.notifyMe">Notifícame cuando esté lista</button>
         </form>
+        <p id="quote-success" class="quote-success" data-i18n="quote.successMessage"></p>
       </div>
     </section>
   </main>
