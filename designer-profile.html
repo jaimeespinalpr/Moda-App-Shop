@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearQuote — Perfil de diseñador</title>
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html#top" class="logo">
+        <img src="assets/images/logo.png" alt="WearQuote" class="logo-img" onerror="this.style.display='none'" />
+        <span class="logo-text">WearQuote</span>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#designers" data-i18n="nav.designers">Diseñadores</a>
+        <a href="index.html#quote" data-i18n="nav.quote">Pide tu cotización</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="es" aria-label="Español (Puerto Rico)">
+          <span class="flag" aria-hidden="true">🇵🇷</span> ES
+        </button>
+        <button class="lang-btn" data-lang="en" aria-label="English (United States)">
+          <span class="flag" aria-hidden="true">🇺🇸</span> EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div id="supabase-missing" class="auth-card" style="display:none;">
+          <h2 data-i18n="auth.notConfiguredTitle">Esta función todavía no está activa</h2>
+          <p data-i18n="auth.notConfiguredText">El panel de diseñadores necesita conectarse a la base de datos primero.</p>
+        </div>
+        <div id="profile-not-found" class="auth-card" style="display:none;">
+          <h2 data-i18n="profile.notFound">No encontramos este diseñador.</h2>
+        </div>
+
+        <div id="profile-content" class="designer-profile" style="display:none;">
+          <div class="designer-profile-header">
+            <img id="profile-photo" class="designer-profile-photo" alt="" />
+            <div>
+              <h1 id="profile-name"></h1>
+              <p id="profile-specialty" class="designer-profile-specialty"></p>
+              <p id="profile-bio"></p>
+              <a id="profile-quote-link" href="index.html#quote" class="btn btn-primary" data-i18n="profile.requestQuote">Pedir cotización a este diseñador</a>
+            </div>
+          </div>
+
+          <h2 data-i18n="profile.portfolioTitle">Portafolio</h2>
+          <div id="profile-portfolio-grid" class="designer-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo-text">WearQuote</span>
+      <p data-i18n="footer.tagline">Moda profesional, hecha a tu medida.</p>
+      <p class="copyright">&copy; 2026 WearQuote</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/designer-profile.js"></script>
+</body>
+</html>
