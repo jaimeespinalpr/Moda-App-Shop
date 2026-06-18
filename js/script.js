@@ -48,6 +48,25 @@ const browserLang = navigator.language?.startsWith("en") ? "en" : "es";
 applyLanguage(savedLang || browserLang);
 
 const quoteForm = document.getElementById("quote-form");
+const quotePhotos = document.getElementById("quote-photos");
+const quotePhotosPreview = document.getElementById("quote-photos-preview");
+
+if (quotePhotos && quotePhotosPreview) {
+  quotePhotos.addEventListener("change", () => {
+    quotePhotosPreview.innerHTML = "";
+    Array.from(quotePhotos.files || []).forEach((file) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const img = document.createElement("img");
+        img.src = reader.result;
+        img.alt = file.name;
+        quotePhotosPreview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+}
+
 if (quoteForm) {
   quoteForm.addEventListener("submit", (e) => {
     e.preventDefault();
