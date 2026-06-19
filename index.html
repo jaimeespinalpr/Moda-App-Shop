@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WearQuote — Moda a tu medida</title>
+  <meta name="description" content="WearQuote conecta clientes con diseñadores de moda profesionales: compra diseños listos o pide una cotización personalizada." />
+  <link rel="icon" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <img src="assets/images/logo.png" alt="WearQuote" class="logo-img" onerror="this.style.display='none'" />
+        <span class="logo-text">WearQuote</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#how-it-works" data-i18n="nav.howItWorks">Cómo funciona</a>
+        <a href="#designers" data-i18n="nav.designers">Diseñadores</a>
+        <a href="#quote" data-i18n="nav.quote">Pide tu cotización</a>
+      </nav>
+
+      <a href="designer-login.html" class="btn btn-secondary nav-designer-btn" data-i18n="nav.designerLogin">Soy diseñador</a>
+
+      <div class="lang-switch" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-lang="es" aria-label="Español (Puerto Rico)">
+          <span class="flag" aria-hidden="true">🇵🇷</span> ES
+        </button>
+        <button class="lang-btn" data-lang="en" aria-label="English (United States)">
+          <span class="flag" aria-hidden="true">🇺🇸</span> EN
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1 data-i18n="hero.title">Moda profesional, diseñada para ti</h1>
+          <p data-i18n="hero.subtitle">Descubre y compra diseños de moda creados por diseñadores profesionales, o describe la pieza que imaginas y recibe cotizaciones personalizadas.</p>
+          <div class="hero-actions">
+            <a href="#designers" class="btn btn-primary" data-i18n="hero.ctaBrowse">Ver diseñadores</a>
+            <a href="#quote" class="btn btn-secondary" data-i18n="hero.ctaQuote">Crear mi cotización</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/hero.jpg" alt="WearQuote" onerror="this.parentElement.classList.add('img-placeholder')" />
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <h2 data-i18n="how.title">Cómo funciona</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="card-icon">🛍️</div>
+            <h3 data-i18n="how.step1Title">Explora diseños</h3>
+            <p data-i18n="how.step1Text">Navega catálogos de diseñadores profesionales y compra piezas ya creadas.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📝</div>
+            <h3 data-i18n="how.step2Title">Describe tu idea</h3>
+            <p data-i18n="how.step2Text">Sube fotos de referencia y elige tela, estilo, hilo y cada detalle de tu prenda ideal.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💬</div>
+            <h3 data-i18n="how.step3Title">Recibe cotizaciones</h3>
+            <p data-i18n="how.step3Text">Tu solicitud se envía a varios diseñadores y tú eliges la mejor oferta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="designers" class="section section-alt">
+      <div class="container">
+        <h2 data-i18n="designers.title">Diseñadores destacados</h2>
+        <p class="section-sub" data-i18n="designers.subtitle">Explora los catálogos de nuestros diseñadores profesionales y pide una cotización directamente.</p>
+        <div id="designers-grid" class="designer-grid">
+          <div class="designer-card placeholder">
+            <div class="designer-photo"></div>
+            <p data-i18n="designers.comingSoon">Próximamente</p>
+          </div>
+          <div class="designer-card placeholder">
+            <div class="designer-photo"></div>
+            <p data-i18n="designers.comingSoon">Próximamente</p>
+          </div>
+          <div class="designer-card placeholder">
+            <div class="designer-photo"></div>
+            <p data-i18n="designers.comingSoon">Próximamente</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quote" class="section quote-section">
+      <div class="container quote-inner">
+        <h2 data-i18n="quote.title">¿Tienes una idea en mente?</h2>
+        <p data-i18n="quote.subtitle">Describe tu prenda ideal — sube fotos de referencia, elige los materiales y cuéntanos los detalles — y la enviaremos a varios diseñadores para recibir su cotización.</p>
+        <p id="quote-target-banner" class="quote-target-banner" style="display:none;"></p>
+        <form class="quote-form quote-form-full" id="quote-form">
+          <div class="form-field">
+            <label for="quote-email" data-i18n="quote.emailLabel">Tu correo electrónico</label>
+            <input type="email" id="quote-email" placeholder="tu@email.com" data-i18n-placeholder="quote.emailPlaceholder" required />
+          </div>
+
+          <div class="form-field">
+            <label for="quote-designer" data-i18n="quote.designerLabel">Enviar a</label>
+            <select id="quote-designer">
+              <option value="" data-i18n="quote.designerAll">Todos los diseñadores</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="quote-photos" data-i18n="quote.photosLabel">Fotos de referencia</label>
+            <input type="file" id="quote-photos" accept="image/*" multiple />
+            <div id="quote-photos-preview" class="photo-preview"></div>
+          </div>
+
+          <div class="form-field">
+            <span class="form-field-label" data-i18n="quote.materialsLabel">Materiales</span>
+            <div class="materials-grid">
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="cotton" />
+                <span data-i18n="quote.materialCotton">Algodón</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="linen" />
+                <span data-i18n="quote.materialLinen">Lino</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="silk" />
+                <span data-i18n="quote.materialSilk">Seda</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="denim" />
+                <span data-i18n="quote.materialDenim">Mezclilla</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="wool" />
+                <span data-i18n="quote.materialWool">Lana</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="leather" />
+                <span data-i18n="quote.materialLeather">Cuero</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="polyester" />
+                <span data-i18n="quote.materialPolyester">Poliéster</span>
+              </label>
+              <label class="material-option">
+                <input type="checkbox" name="materials" value="other" />
+                <span data-i18n="quote.materialOther">Otro</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="quote-comments" data-i18n="quote.commentsLabel">Comentarios o instrucciones</label>
+            <textarea id="quote-comments" rows="4" data-i18n-placeholder="quote.commentsPlaceholder" placeholder="Cuéntanos el estilo, el hilo, la talla o cualquier detalle importante..."></textarea>
+          </div>
+
+          <p id="quote-error" class="auth-error"></p>
+          <button type="submit" class="btn btn-primary" data-i18n="quote.submit">Enviar mi cotización</button>
+        </form>
+        <p id="quote-success" class="quote-success" data-i18n="quote.successMessage"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo-text">WearQuote</span>
+      <p data-i18n="footer.tagline">Moda profesional, hecha a tu medida.</p>
+      <p class="copyright">&copy; 2026 WearQuote</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/designers.js"></script>
+  <script src="js/quote-form.js"></script>
+</body>
+</html>
