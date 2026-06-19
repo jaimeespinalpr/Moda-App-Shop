@@ -44,6 +44,8 @@ const translations = {
     "footer.tagline": "Moda profesional, hecha a tu medida.",
     "auth.notConfiguredTitle": "Esta función todavía no está activa",
     "auth.notConfiguredText": "El panel de diseñadores necesita conectarse a la base de datos primero.",
+    "auth.cardTitle": "Panel de diseñadores",
+    "auth.cardSubtitle": "Inicia sesión o crea tu cuenta para mostrar tu trabajo y recibir cotizaciones.",
     "auth.loginTab": "Iniciar sesión",
     "auth.signupTab": "Crear cuenta de diseñador",
     "auth.emailLabel": "Correo electrónico",
@@ -65,7 +67,8 @@ const translations = {
     "dashboard.uploadButton": "Subir al portafolio",
     "profile.notFound": "No encontramos este diseñador.",
     "profile.requestQuote": "Pedir cotización a este diseñador",
-    "profile.portfolioTitle": "Portafolio"
+    "profile.portfolioTitle": "Portafolio",
+    "profile.viewProfile": "Ver perfil →"
   },
   en: {
     "page.title": "WearQuote — Custom Fashion",
@@ -112,6 +115,8 @@ const translations = {
     "footer.tagline": "Professional fashion, made to your measure.",
     "auth.notConfiguredTitle": "This feature isn't active yet",
     "auth.notConfiguredText": "The designer dashboard needs to be connected to the database first.",
+    "auth.cardTitle": "Designer dashboard",
+    "auth.cardSubtitle": "Log in or create your account to showcase your work and receive quote requests.",
     "auth.loginTab": "Log in",
     "auth.signupTab": "Create designer account",
     "auth.emailLabel": "Email",
@@ -133,6 +138,7 @@ const translations = {
     "dashboard.uploadButton": "Upload to portfolio",
     "profile.notFound": "We couldn't find this designer.",
     "profile.requestQuote": "Request a quote from this designer",
-    "profile.portfolioTitle": "Portfolio"
+    "profile.portfolioTitle": "Portfolio",
+    "profile.viewProfile": "View profile →"
   }
 };

@@ -11,19 +11,35 @@ async function loadDesigners() {
 
   if (!designers || designers.length === 0) return;
 
+  const lang = document.documentElement.lang;
+  const t = (translations && (translations[lang] || translations.es)) || {};
+  const viewProfileLabel = t["profile.viewProfile"] || "Ver perfil →";
+
   designersGrid.innerHTML = "";
   designers.forEach((designer) => {
+    const name = escapeHtml(designer.name);
+    const specialty = escapeHtml(designer.specialty);
+    const bio = escapeHtml(designer.bio);
+    const initial = (designer.name || "?").trim().charAt(0).toUpperCase();
+
     const card = document.createElement("a");
     card.href = `designer-profile.html?id=${designer.id}`;
-    card.className = "designer-card";
+    card.className = "designer-card gig-card";
     card.innerHTML = `
-      ${
-        designer.photo_url
-          ? `<img src="${designer.photo_url}" alt="${designer.name}" class="designer-photo-img" />`
-          : `<div class="designer-photo"></div>`
-      }
-      <h3>${designer.name}</h3>
-      <p>${designer.specialty || ""}</p>
+      <div class="gig-card-media">
+        ${designer.photo_url ? `<img src="${designer.photo_url}" alt="${name}" />` : ""}
+      </div>
+      <div class="gig-card-body">
+        <div class="gig-card-header">
+          <div class="gig-avatar">
+            ${designer.photo_url ? `<img src="${designer.photo_url}" alt="" />` : escapeHtml(initial)}
+          </div>
+          <h3 class="gig-card-name">${name}</h3>
+        </div>
+        ${specialty ? `<span class="gig-specialty-badge">${specialty}</span>` : ""}
+        ${bio ? `<p class="gig-card-bio">${bio}</p>` : ""}
+        <span class="gig-card-cta">${viewProfileLabel}</span>
+      </div>
     `;
     designersGrid.appendChild(card);
   });

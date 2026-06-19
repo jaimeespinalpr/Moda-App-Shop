@@ -52,12 +52,14 @@ if (!supabaseClient) {
 
     portfolioGrid.innerHTML = "";
     (items || []).forEach((item) => {
+      const title = escapeHtml(item.title);
+      const description = escapeHtml(item.description);
       const card = document.createElement("div");
       card.className = "designer-card";
       card.innerHTML = `
-        <img src="${item.image_url}" alt="${item.title || ""}" class="portfolio-thumb" />
-        <h3>${item.title || ""}</h3>
-        <p>${item.description || ""}</p>
+        <img src="${item.image_url}" alt="${title}" class="portfolio-thumb" />
+        <h3>${title}</h3>
+        <p>${description}</p>
         <button class="btn btn-secondary delete-portfolio-item" data-id="${item.id}">Eliminar</button>
       `;
       portfolioGrid.appendChild(card);
