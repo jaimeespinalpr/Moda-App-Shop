@@ -4,19 +4,8 @@ if (!supabaseClient) {
   if (missing) missing.style.display = "block";
   if (card) card.style.display = "none";
 } else {
-  const tabs = document.querySelectorAll(".auth-tab");
   const loginForm = document.getElementById("login-form");
   const signupForm = document.getElementById("signup-form");
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      tabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-      const isLogin = tab.getAttribute("data-tab") === "login";
-      loginForm.hidden = !isLogin;
-      signupForm.hidden = isLogin;
-    });
-  });
 
   async function ensureDesignerRow(user) {
     const { data: existing } = await supabaseClient
